@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>땡클 - 티켓팅 연습</title>
+<meta name="description" content="서버 시간에 맞춰 예매하기부터 좌석 잡기까지 연습하는 티켓팅 연습 앱 땡클">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=JetBrains+Mono:wght@700&display=swap">
+<style>
+  :root { --bg:#F4F3EF; --surface:#FFFFFF; --line:#E2E0D9; --text:#15161A; --sub:#5C5F69; --accent:#D6363C; --time:#1F5FD1; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0D0E12; --surface:#17191F; --line:#2A2D36; --text:#F2F2F4; --sub:#A0A4AF; --accent:#FF5C61; --time:#7AA7FF; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:'Noto Sans KR', system-ui, sans-serif; line-height:1.6; }
+  main { max-width:640px; margin:0 auto; padding:56px 20px 40px; display:flex; flex-direction:column; gap:28px; }
+  .brand { display:flex; align-items:center; gap:18px; }
+  .brand svg { width:88px; height:88px; flex:none; }
+  h1 { margin:0; font-size:44px; font-weight:900; letter-spacing:-1px; line-height:1; }
+  h1 span { color:var(--accent); }
+  .tag { margin:6px 0 0; color:var(--sub); font-weight:700; }
+  .lead { margin:0; font-size:22px; font-weight:900; line-height:1.4; }
+  .lead em { font-style:normal; color:var(--accent); }
+  .clock { font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:700; font-size:28px; letter-spacing:-0.5px; }
+  .clock span { color:var(--time); }
+  ul { margin:0; padding-left:20px; color:var(--sub); }
+  ul li { margin:4px 0; }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; }
+  .card h2 { margin:0; font-size:15px; color:var(--sub); }
+  .links { display:flex; flex-wrap:wrap; gap:8px; }
+  .links a { display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:var(--bg); color:var(--text); text-decoration:none; font-weight:700; }
+  .links a:hover, .links a:focus-visible { border-color:var(--text); }
+  .note { font-size:13px; color:var(--sub); margin:0; }
+  footer { font-size:12px; color:var(--sub); }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">
+    <svg viewBox="0 0 200 200" role="img" aria-label="땡클 아이콘">
+      <rect width="200" height="200" rx="45" fill="#15161A"/>
+      <g transform="rotate(-10 100 100)">
+        <rect x="25" y="55" width="150" height="90" rx="12" fill="#F4F3EF"/>
+        <circle cx="25" cy="100" r="12" fill="#15161A"/><circle cx="175" cy="100" r="12" fill="#15161A"/>
+        <line x1="128" y1="64" x2="128" y2="136" stroke="#15161A" stroke-width="3" stroke-dasharray="6 6" opacity="0.35"/>
+        <circle cx="76" cy="100" r="28" fill="none" stroke="#15161A" stroke-width="6"/>
+        <line x1="76" y1="100" x2="76" y2="81" stroke="#15161A" stroke-width="6" stroke-linecap="round"/>
+        <line x1="76" y1="107" x2="76" y2="76" stroke="#FF5C61" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="76" cy="100" r="4" fill="#FF5C61"/>
+        <rect x="143" y="90" width="20" height="20" rx="5" fill="#FF5C61"/>
+      </g>
+    </svg>
+    <div>
+      <h1>땡<span>클</span></h1>
+      <p class="tag">티켓팅 연습</p>
+    </div>
+  </div>
+
+  <p class="lead">땡! 열리는 순간,<br><em>먼저 누르면 내 자리</em></p>
+  <div class="clock" aria-hidden="true">20:00:00<span>.000</span></div>
+
+  <ul>
+    <li>예매 사이트의 서버 시간에 맞춰 "예매하기"를 누르고, 순식간에 팔리는 좌석을 잡는 연습을 해요.</li>
+    <li>공연장, 기차, 고속버스 좌석 배치와 1매·2매, 연석, 난이도를 고를 수 있어요.</li>
+    <li>입장 시간과 좌석 선택 시간을 0.001초까지 재고, 랭킹으로 겨뤄요. 회원가입은 필요 없어요.</li>
+  </ul>
+
+  <div class="card">
+    <h2>정책</h2>
+    <div class="links">
+      <a href="https://eager-opinion-c33.notion.site/40fe07014f9b81a99c02ea8b3db75c31">개인정보 처리방침</a>
+      <a href="https://eager-opinion-c33.notion.site/40fe07014f9b819da26bcdb0eeb41521">서비스 이용약관</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>문의</h2>
+    <p style="margin:0"><a href="mailto:eistar9109@gmail.com" style="color:var(--time)">eistar9109@gmail.com</a></p>
+  </div>
+
+  <p class="note">땡클은 연습용 앱이고, 어느 예매처와도 관련이 없어요. 실제 티켓을 예매하지 않아요.</p>
+  <footer>© 2026 땡클 · 신현하</footer>
+</main>
+</body>
+</html>
